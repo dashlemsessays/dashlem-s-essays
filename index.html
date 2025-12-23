@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naval | Wisdom Archive</title>
+    <title>Dashlem | Wisdom Archive</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -73,6 +73,15 @@
             color: #000;
         }
 
+        .nav-links a.active {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -125,39 +134,39 @@
             border-bottom: 1px solid #eee;
         }
 
-        .essay-list, .book-list {
+        .essay-list, .book-list, .podcast-list {
             list-style: none;
         }
 
-        .essay-item, .book-item {
+        .essay-item, .book-item, .podcast-item {
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid #f5f5f5;
         }
 
-        .essay-title, .book-title {
+        .essay-title, .book-title, .podcast-title {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .essay-title a, .book-title a {
+        .essay-title a, .book-title a, .podcast-title a {
             text-decoration: none;
             color: #000;
         }
 
-        .essay-title a:hover, .book-title a:hover {
+        .essay-title a:hover, .book-title a:hover, .podcast-title a:hover {
             color: #333;
             text-decoration: underline;
         }
 
-        .essay-excerpt, .book-author {
+        .essay-excerpt, .book-author, .podcast-description {
             color: #666;
             font-size: 0.95rem;
             margin-bottom: 0.5rem;
         }
 
-        .essay-meta, .book-meta {
+        .essay-meta, .book-meta, .podcast-meta {
             display: flex;
             gap: 1rem;
             color: #888;
@@ -218,6 +227,23 @@
             background-color: #333;
         }
 
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        .about-content {
+            margin-top: 2rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
         footer {
             margin-top: 4rem;
             padding-top: 2rem;
@@ -264,104 +290,339 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="site-title">Naval</h1>
+            <h1 class="site-title">Dashlem</h1>
             <p class="site-subtitle">Wisdom archive and philosophy</p>
             
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#essays">Essays</a></li>
-                    <li><a href="#books">Books</a></li>
-                    <li><a href="#podcast">Podcast</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#archive">Archive</a></li>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="essays">Essays</a></li>
+                    <li><a href="#" class="nav-link" data-page="books">Books</a></li>
+                    <li><a href="#" class="nav-link" data-page="podcast">Podcast</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                    <li><a href="#" class="nav-link" data-page="archive">Archive</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section class="hero">
-            <h1>Seek wealth, not money or status.</h1>
-            <p>Wealth is having assets that earn while you sleep. Money is how we transfer time and wealth. Status is your place in the social hierarchy.</p>
-            
-            <div class="quote">
-                "The most important skill for getting rich is becoming a perpetual learner. You have to know how to learn anything you want to learn."
-            </div>
-        </section>
+        <!-- Home Page -->
+        <div id="home-page" class="page-content active">
+            <section class="hero">
+                <h1>Seek wisdom, not just knowledge or information.</h1>
+                <p>Wisdom is understanding the fundamental principles that govern reality. Knowledge is accumulation of facts. Information is data in context.</p>
+                
+                <div class="quote">
+                    "The most important skill for meaningful living is becoming a perpetual learner. You have to know how to learn anything you need to learn."
+                </div>
+            </section>
 
-        <section id="essays" class="content-section">
-            <h2 class="section-title">Featured Essays</h2>
-            <ul class="essay-list">
-                <li class="essay-item">
-                    <h3 class="essay-title"><a href="#">How to Get Rich (without getting lucky)</a></h3>
-                    <p class="essay-excerpt">A collection of tweets and wisdom on building wealth and creating freedom.</p>
-                    <div class="essay-meta">
-                        <span>5 min read</span>
-                        <span>•</span>
-                        <span>Updated Jan 2023</span>
-                    </div>
-                    <div>
-                        <span class="tag">Wealth</span>
-                        <span class="tag">Philosophy</span>
-                        <span class="tag">Life</span>
-                    </div>
-                </li>
-                <li class="essay-item">
-                    <h3 class="essay-title"><a href="#">The Angel Philosopher</a></h3>
-                    <p class="essay-excerpt">On investing in technology startups and seeking truth through philosophy.</p>
-                    <div class="essay-meta">
-                        <span>8 min read</span>
-                        <span>•</span>
-                        <span>Mar 2022</span>
-                    </div>
-                    <div>
-                        <span class="tag">Investing</span>
-                        <span class="tag">Startups</span>
-                    </div>
-                </li>
-                <li class="essay-item">
-                    <h3 class="essay-title"><a href="#">Happiness is a Choice</a></h3>
-                    <p class="essay-excerpt">You can choose to be happy right now, without changing your external circumstances.</p>
-                    <div class="essay-meta">
-                        <span>4 min read</span>
-                        <span>•</span>
-                        <span>Dec 2021</span>
-                    </div>
-                    <div>
-                        <span class="tag">Happiness</span>
-                        <span class="tag">Mindfulness</span>
-                    </div>
-                </li>
-            </ul>
-        </section>
+            <section class="content-section">
+                <h2 class="section-title">Latest Insights</h2>
+                <ul class="essay-list">
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#" data-page="essays">How to Live Wisely (without following trends)</a></h3>
+                        <p class="essay-excerpt">A collection of thoughts and wisdom on building meaningful life and creating purpose.</p>
+                        <div class="essay-meta">
+                            <span>6 min read</span>
+                            <span>•</span>
+                            <span>Updated Feb 2024</span>
+                        </div>
+                        <div>
+                            <span class="tag">Wisdom</span>
+                            <span class="tag">Philosophy</span>
+                            <span class="tag">Life</span>
+                        </div>
+                    </li>
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#" data-page="essays">The Modern Philosopher</a></h3>
+                        <p class="essay-excerpt">On understanding technology and seeking truth through timeless philosophy.</p>
+                        <div class="essay-meta">
+                            <span>9 min read</span>
+                            <span>•</span>
+                            <span>Jan 2024</span>
+                        </div>
+                        <div>
+                            <span class="tag">Technology</span>
+                            <span class="tag">Philosophy</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
 
-        <section id="books" class="content-section">
-            <h2 class="section-title">Recommended Books</h2>
-            <ul class="book-list">
-                <li class="book-item">
-                    <h3 class="book-title"><a href="#">The Almanack of Naval Ravikant</a></h3>
-                    <p class="book-author">Eric Jorgenson</p>
-                    <p class="essay-excerpt">A collection of Naval's wisdom and experience from the last ten years.</p>
-                    <div class="essay-meta">
-                        <span>Book</span>
-                        <span>•</span>
-                        <span>2020</span>
-                    </div>
-                </li>
-                <li class="book-item">
-                    <h3 class="book-title"><a href="#">Sapiens: A Brief History of Humankind</a></h3>
-                    <p class="book-author">Yuval Noah Harari</p>
-                    <p class="essay-excerpt">Exploring how biology and history have defined us and given us insight into what it means to be "human".</p>
-                    <div class="essay-meta">
-                        <span>Book</span>
-                        <span>•</span>
-                        <span>2014</span>
-                    </div>
-                </li>
-            </ul>
-        </section>
+        <!-- Essays Page -->
+        <div id="essays-page" class="page-content">
+            <section class="hero">
+                <h1>Essays & Writings</h1>
+                <p>Deep dives into philosophy, technology, and the art of living.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">All Essays</h2>
+                <ul class="essay-list">
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">How to Live Wisely (without following trends)</a></h3>
+                        <p class="essay-excerpt">A comprehensive guide to building a meaningful life based on first principles rather than social validation.</p>
+                        <div class="essay-meta">
+                            <span>6 min read</span>
+                            <span>•</span>
+                            <span>Feb 2024</span>
+                        </div>
+                        <div>
+                            <span class="tag">Wisdom</span>
+                            <span class="tag">Philosophy</span>
+                            <span class="tag">Life</span>
+                        </div>
+                    </li>
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">The Modern Philosopher</a></h3>
+                        <p class="essay-excerpt">Navigating the digital age with ancient wisdom and modern insights.</p>
+                        <div class="essay-meta">
+                            <span>9 min read</span>
+                            <span>•</span>
+                            <span>Jan 2024</span>
+                        </div>
+                        <div>
+                            <span class="tag">Technology</span>
+                            <span class="tag">Philosophy</span>
+                        </div>
+                    </li>
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">Mindfulness in the Digital Age</a></h3>
+                        <p class="essay-excerpt">Finding peace and presence amidst constant digital stimulation.</p>
+                        <div class="essay-meta">
+                            <span>7 min read</span>
+                            <span>•</span>
+                            <span>Dec 2023</span>
+                        </div>
+                        <div>
+                            <span class="tag">Mindfulness</span>
+                            <span class="tag">Digital</span>
+                            <span class="tag">Well-being</span>
+                        </div>
+                    </li>
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">The Ethics of Artificial Intelligence</a></h3>
+                        <p class="essay-excerpt">Philosophical considerations for the age of intelligent machines.</p>
+                        <div class="essay-meta">
+                            <span>11 min read</span>
+                            <span>•</span>
+                            <span>Nov 2023</span>
+                        </div>
+                        <div>
+                            <span class="tag">AI</span>
+                            <span class="tag">Ethics</span>
+                            <span class="tag">Future</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Books Page -->
+        <div id="books-page" class="page-content">
+            <section class="hero">
+                <h1>Recommended Books</h1>
+                <p>Timeless wisdom from thinkers and authors who have shaped modern thought.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Essential Reading</h2>
+                <ul class="book-list">
+                    <li class="book-item">
+                        <h3 class="book-title"><a href="#">The Wisdom of Dashlem</a></h3>
+                        <p class="book-author">Compiled by Various Authors</p>
+                        <p class="essay-excerpt">A collection of Dashlem's wisdom and philosophical insights from the last decade.</p>
+                        <div class="essay-meta">
+                            <span>Book</span>
+                            <span>•</span>
+                            <span>2023</span>
+                        </div>
+                        <div>
+                            <span class="tag">Philosophy</span>
+                            <span class="tag">Wisdom</span>
+                        </div>
+                    </li>
+                    <li class="book-item">
+                        <h3 class="book-title"><a href="#">Sapiens: A Brief History of Humankind</a></h3>
+                        <p class="book-author">Yuval Noah Harari</p>
+                        <p class="essay-excerpt">Exploring how biology and history have defined us and given us insight into what it means to be "human".</p>
+                        <div class="essay-meta">
+                            <span>Book</span>
+                            <span>•</span>
+                            <span>2014</span>
+                        </div>
+                        <div>
+                            <span class="tag">History</span>
+                            <span class="tag">Anthropology</span>
+                        </div>
+                    </li>
+                    <li class="book-item">
+                        <h3 class="book-title"><a href="#">Meditations</a></h3>
+                        <p class="book-author">Marcus Aurelius</p>
+                        <p class="essay-excerpt">The personal writings of the Roman emperor which outline his Stoic philosophy.</p>
+                        <div class="essay-meta">
+                            <span>Book</span>
+                            <span>•</span>
+                            <span>180 AD</span>
+                        </div>
+                        <div>
+                            <span class="tag">Stoicism</span>
+                            <span class="tag">Philosophy</span>
+                        </div>
+                    </li>
+                    <li class="book-item">
+                        <h3 class="book-title"><a href="#">The Beginning of Infinity</a></h3>
+                        <p class="book-author">David Deutsch</p>
+                        <p class="essay-excerpt">Explanations that transform the world and the infinite reach of human knowledge.</p>
+                        <div class="essay-meta">
+                            <span>Book</span>
+                            <span>•</span>
+                            <span>2011</span>
+                        </div>
+                        <div>
+                            <span class="tag">Science</span>
+                            <span class="tag">Epistemology</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Podcast Page -->
+        <div id="podcast-page" class="page-content">
+            <section class="hero">
+                <h1>Podcast Conversations</h1>
+                <p>Deep conversations with thinkers, creators, and philosophers.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Latest Episodes</h2>
+                <ul class="podcast-list">
+                    <li class="podcast-item">
+                        <h3 class="podcast-title"><a href="#">The Nature of Consciousness</a></h3>
+                        <p class="podcast-description">Exploring what consciousness is and why it exists with neuroscientist Dr. Lena Moreau.</p>
+                        <div class="podcast-meta">
+                            <span>72 min</span>
+                            <span>•</span>
+                            <span>Jan 2024</span>
+                        </div>
+                        <div>
+                            <span class="tag">Consciousness</span>
+                            <span class="tag">Neuroscience</span>
+                        </div>
+                    </li>
+                    <li class="podcast-item">
+                        <h3 class="podcast-title"><a href="#">Stoicism for Modern Life</a></h3>
+                        <p class="podcast-description">Practical applications of Stoic philosophy in the 21st century.</p>
+                        <div class="podcast-meta">
+                            <span>58 min</span>
+                            <span>•</span>
+                            <span>Dec 2023</span>
+                        </div>
+                        <div>
+                            <span class="tag">Stoicism</span>
+                            <span class="tag">Philosophy</span>
+                        </div>
+                    </li>
+                    <li class="podcast-item">
+                        <h3 class="podcast-title"><a href="#">The Future of Education</a></h3>
+                        <p class="podcast-description">How technology is transforming how we learn and what it means for humanity.</p>
+                        <div class="podcast-meta">
+                            <span>65 min</span>
+                            <span>•</span>
+                            <span>Nov 2023</span>
+                        </div>
+                        <div>
+                            <span class="tag">Education</span>
+                            <span class="tag">Technology</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page-content">
+            <section class="hero">
+                <h1>About Dashlem</h1>
+                <p>Philosophy, wisdom, and the pursuit of understanding.</p>
+            </section>
+
+            <section class="content-section">
+                <div class="about-content">
+                    <p>Dashlem is a philosopher and thinker focused on understanding fundamental truths about reality, consciousness, and human flourishing. His work spans technology, philosophy, psychology, and the science of well-being.</p>
+                    
+                    <p>Through essays, conversations, and writings, Dashlem explores timeless questions with modern relevance: How do we live meaningful lives? What is the nature of reality? How can we understand consciousness? What principles lead to wisdom and fulfillment?</p>
+                    
+                    <p>The approach is interdisciplinary, drawing from ancient philosophical traditions, modern science, and first-principles thinking. The goal is not just to accumulate knowledge, but to cultivate wisdom that can be applied to live better lives and understand our world more deeply.</p>
+                    
+                    <p>This archive serves as a collection of insights, essays, and recommended resources for those on a similar path of understanding and growth.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Archive Page -->
+        <div id="archive-page" class="page-content">
+            <section class="hero">
+                <h1>Complete Archive</h1>
+                <p>All writings, sorted by year and category.</p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">2024</h2>
+                <ul class="essay-list">
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">How to Live Wisely (without following trends)</a></h3>
+                        <div class="essay-meta">
+                            <span>Feb 2024</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                    </li>
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">The Modern Philosopher</a></h3>
+                        <div class="essay-meta">
+                            <span>Jan 2024</span>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2 class="section-title" style="margin-top: 3rem;">2023</h2>
+                <ul class="essay-list">
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">Mindfulness in the Digital Age</a></h3>
+                        <div class="essay-meta">
+                            <span>Dec 2023</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                    </li>
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">The Ethics of Artificial Intelligence</a></h3>
+                        <div class="essay-meta">
+                            <span>Nov 2023</span>
+                            <span>•</span>
+                            <span>11 min read</span>
+                        </div>
+                    </li>
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">First Principles Thinking</a></h3>
+                        <div class="essay-meta">
+                            <span>Oct 2023</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
 
         <section class="newsletter">
-            <h3>Join the Newsletter</h3>
-            <p>Subscribe to get occasional updates with new essays, insights, and wisdom. No spam, ever.</p>
+            <h3>Join the Wisdom Newsletter</h3>
+            <p>Subscribe to get occasional updates with new essays, insights, and philosophical reflections. No spam, ever.</p>
             <form class="newsletter-form">
                 <input type="email" class="newsletter-input" placeholder="Your email address" required>
                 <button type="submit" class="newsletter-button">Subscribe</button>
@@ -369,9 +630,9 @@
         </section>
 
         <footer>
-            <p>© Naval 2023. All wisdom is free to share.</p>
+            <p>© Dashlem 2024. All wisdom is free to share.</p>
             <div class="footer-links">
-                <a href="https://twitter.com/naval" target="_blank">Twitter</a>
+                <a href="https://twitter.com/dashlem" target="_blank">Twitter</a>
                 <a href="https://github.com" target="_blank">GitHub</a>
                 <a href="#">RSS</a>
                 <a href="#contact">Contact</a>
@@ -381,27 +642,88 @@
     </div>
 
     <script>
-        // Simple form submission handler
+        // Page navigation system
+        const pages = {
+            'home': document.getElementById('home-page'),
+            'essays': document.getElementById('essays-page'),
+            'books': document.getElementById('books-page'),
+            'podcast': document.getElementById('podcast-page'),
+            'about': document.getElementById('about-page'),
+            'archive': document.getElementById('archive-page')
+        };
+
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Function to switch pages
+        function switchPage(pageId) {
+            // Hide all pages
+            Object.values(pages).forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            if (pages[pageId]) {
+                pages[pageId].classList.add('active');
+            }
+            
+            // Update active nav link
+            navLinks.forEach(link => {
+                if (link.dataset.page === pageId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Update browser history
+            history.pushState({ page: pageId }, '', `#${pageId}`);
+        }
+
+        // Add click events to nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.dataset.page;
+                switchPage(pageId);
+            });
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(e) {
+            if (e.state && e.state.page) {
+                switchPage(e.state.page);
+            } else {
+                switchPage('home');
+            }
+        });
+
+        // Handle hash on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && pages[hash]) {
+                switchPage(hash);
+            } else {
+                switchPage('home');
+            }
+        });
+
+        // Newsletter form handler
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = this.querySelector('.newsletter-input').value;
-            alert(`Thank you! You've subscribed with: ${email}`);
+            alert(`Thank you for subscribing to Dashlem's wisdom! You've subscribed with: ${email}`);
             this.reset();
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
+        // Make essay titles clickable to navigate to essays page
+        document.querySelectorAll('.essay-title a, .book-title a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.dataset.page) {
                     e.preventDefault();
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    switchPage(this.dataset.page);
                 }
             });
         });

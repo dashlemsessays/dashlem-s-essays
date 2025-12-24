@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashlem | Thoughts Archive</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,15 +12,13 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
             background-color: #ffffff;
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem 1rem;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -39,13 +34,10 @@
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            color: #000000;
         }
 
         .site-subtitle {
-            font-size: 1rem;
             color: #666;
-            font-weight: 400;
             margin-bottom: 2rem;
         }
 
@@ -56,74 +48,19 @@
         .nav-links {
             display: flex;
             gap: 1.5rem;
-            flex-wrap: wrap;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
-            font-size: 0.95rem;
             padding: 0.25rem 0;
-            position: relative;
         }
 
         .nav-links a:hover {
             color: #000;
-        }
-
-        .nav-links a.active {
-            color: #000;
-            font-weight: 600;
-        }
-
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #000;
-            transition: width 0.2s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .hero {
-            margin-bottom: 4rem;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #444;
-            margin-bottom: 2rem;
-        }
-
-        .quote {
-            border-left: 3px solid #e5e5e5;
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: #444;
-        }
-
-        .content-section {
-            margin-bottom: 4rem;
         }
 
         .section-title {
@@ -134,43 +71,42 @@
             border-bottom: 1px solid #eee;
         }
 
-        .essay-list, .book-list, .podcast-list {
+        .essay-list {
             list-style: none;
         }
 
-        .essay-item, .book-item, .podcast-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
+        .essay-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid #f5f5f5;
         }
 
-        .essay-title, .book-title, .podcast-title {
-            font-size: 1.2rem;
+        .essay-title {
+            font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .essay-title a, .book-title a, .podcast-title a {
+        .essay-title a {
             text-decoration: none;
             color: #000;
         }
 
-        .essay-title a:hover, .book-title a:hover, .podcast-title a:hover {
-            color: #333;
+        .essay-title a:hover {
             text-decoration: underline;
         }
 
-        .essay-excerpt, .book-author, .podcast-description {
+        .essay-excerpt {
             color: #666;
-            font-size: 0.95rem;
             margin-bottom: 0.5rem;
         }
 
-        .essay-meta, .book-meta, .podcast-meta {
+        .essay-meta {
             display: flex;
             gap: 1rem;
             color: #888;
             font-size: 0.85rem;
+            margin-bottom: 0.5rem;
         }
 
         .tag {
@@ -183,143 +119,53 @@
             margin-bottom: 0.5rem;
         }
 
-        .newsletter {
-            background-color: #f9f9f9;
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 3rem 0;
-        }
-
-        .newsletter h3 {
-            margin-bottom: 1rem;
-        }
-
-        .newsletter p {
-            margin-bottom: 1.5rem;
-            color: #555;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        .newsletter-button {
-            padding: 0.75rem 1.5rem;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-family: inherit;
-            font-weight: 500;
-            cursor: pointer;
-        }
-
-        .newsletter-button:hover {
-            background-color: #333;
-        }
-
-        .page-content {
-            display: none;
-        }
-
-        .page-content.active {
-            display: block;
-        }
-
-        .about-content {
-            margin-top: 2rem;
-        }
-
-        .about-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-
-        /* Style pour les commentaires visibles */
-        .comment {
-            background-color: #fff5f5;
-            border: 2px solid #ffcccc;
-            border-radius: 8px;
+        /* Style pour les instructions */
+        .instruction {
+            background-color: #f0f8ff;
+            border-left: 4px solid #4a90e2;
             padding: 1.5rem;
             margin: 2rem 0;
-            font-style: normal;
-            position: relative;
+            border-radius: 4px;
         }
 
-        .comment::before {
-            content: "💡 COMMENTAIRE";
-            display: block;
-            font-weight: bold;
-            color: #cc0000;
-            font-size: 0.9rem;
+        .instruction h3 {
+            color: #2c5282;
             margin-bottom: 0.5rem;
-            border-bottom: 1px solid #ffcccc;
-            padding-bottom: 0.5rem;
         }
 
-        .comment.to-fix {
+        .instruction code {
+            background-color: #e6f7ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .example-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .space-for-content {
             background-color: #fff8e6;
-            border: 2px solid #ffcc00;
-        }
-
-        .comment.to-fix::before {
-            content: "⚠️ À MODIFIER";
+            border: 2px dashed #ffcc00;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
             color: #cc6600;
-            border-bottom: 1px solid #ffcc00;
+            border-radius: 8px;
         }
 
         @media (max-width: 768px) {
             body {
-                padding: 1.5rem 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
+                padding: 1rem;
             }
             
             .nav-links {
                 gap: 1rem;
-            }
-            
-            .comment {
-                padding: 1rem;
             }
         }
     </style>
@@ -327,369 +173,168 @@
 <body>
     <div class="container">
         <header>
-            <!-- COMMENTAIRE: Vous pouvez changer le nom du site ici -->
             <h1 class="site-title">Dashlem</h1>
-            
-            <!-- COMMENTAIRE: Vous pouvez modifier le sous-titre/slogan ici -->
-            <p class="site-subtitle">My thoughts : to let something on this earth.</p>
+            <p class="site-subtitle">Thoughts, essays, and insights</p>
             
             <nav>
                 <ul class="nav-links">
-                    <!-- COMMENTAIRE: Vous pouvez modifier les titres des pages de navigation ici -->
-                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-                    <li><a href="#" class="nav-link" data-page="essays">Essays</a></li>
-                    <li><a href="#" class="nav-link" data-page="books">Books</a></li>
-                    <li><a href="#" class="nav-link" data-page="podcast">Podcast</a></li>
-                    <li><a href="#" class="nav-link" data-page="about">About</a></li>
-                    <li><a href="#" class="nav-link" data-page="archive">Archive</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#essays">Essays</a></li>
+                    <li><a href="#archive">Archive</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- Home Page -->
-        <div id="home-page" class="page-content active">
-            <section class="hero">
-                <!-- COMMENTAIRE: Vous pouvez changer le titre principal de la page d'accueil ici -->
-                <h1>Seek wisdom, not just knowledge or information.</h1>
+        <!-- INSTRUCTION GÉNÉRALE -->
+        <div class="instruction">
+            <h3>📝 COMMENT CRÉER VOS ARTICLES</h3>
+            <p>1. Copiez la structure HTML ci-dessous pour chaque nouvel article</p>
+            <p>2. Collez-la dans la section "ESPACE POUR VOS ARTICLES"</p>
+            <p>3. Remplissez les éléments entre [ ] avec votre contenu</p>
+        </div>
+
+        <!-- STRUCTURE D'UN ARTICLE (À COPIER) -->
+        <div class="example-box">
+            <h3>📋 STRUCTURE À COPIER POUR UN ARTICLE :</h3>
+            <pre><code>&lt;li class="essay-item"&gt;
+  &lt;h3 class="essay-title"&gt;&lt;a href="#"&gt;[TITRE DE VOTRE ARTICLE]&lt;/a&gt;&lt;/h3&gt;
+  &lt;p class="essay-excerpt"&gt;[DESCRIPTION COURTE - 1 à 3 phrases]&lt;/p&gt;
+  &lt;div class="essay-meta"&gt;
+    &lt;span&gt;[TEMPS DE LECTURE]&lt;/span&gt;
+    &lt;span&gt;•&lt;/span&gt;
+    &lt;span&gt;[DATE]&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;span class="tag"&gt;[TAG 1]&lt;/span&gt;
+    &lt;span class="tag"&gt;[TAG 2]&lt;/span&gt;
+    &lt;span class="tag"&gt;[TAG 3]&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/li&gt;</code></pre>
+        </div>
+
+        <!-- EXEMPLE D'ARTICLE RÉUSSI -->
+        <div class="example-box">
+            <h3>✅ EXEMPLE D'ARTICLE REMPLI :</h3>
+            <li class="essay-item">
+                <h3 class="essay-title"><a href="#">Comment Apprendre N'importe Quel Sujet</a></h3>
+                <p class="essay-excerpt">Une méthode simple pour maîtriser de nouvelles compétences rapidement en utilisant les principes de l'apprentissage en profondeur et de la pratique délibérée.</p>
+                <div class="essay-meta">
+                    <span>8 min read</span>
+                    <span>•</span>
+                    <span>Mars 2024</span>
+                </div>
+                <div>
+                    <span class="tag">Apprentissage</span>
+                    <span class="tag">Productivité</span>
+                    <span class="tag">Éducation</span>
+                </div>
+            </li>
+        </div>
+
+        <!-- SECTION PRINCIPALE POUR VOS ARTICLES -->
+        <div class="space-for-content">
+            <h3>👇 ESPACE POUR VOS ARTICLES 👇</h3>
+            <p>Copiez-collez la structure ci-dessus ici et remplissez-la</p>
+        </div>
+
+        <section id="home">
+            <h2 class="section-title">Derniers Articles</h2>
+            <ul class="essay-list">
+                <!-- VOTRE PREMIER ARTICLE ICI -->
+                <div class="instruction">
+                    <h3>🎯 ARTICLE 1 : Commencez ici</h3>
+                    <p>Copiez la structure d'article et collez-la ci-dessous :</p>
+                </div>
                 
-                <!-- COMMENTAIRE: Vous pouvez modifier la description principale ici -->
-                <p>Wisdom is understanding the fundamental principles that govern reality. Knowledge is accumulation of facts. Information is data in context.</p>
+                <!-- ESPACE POUR ARTICLE 1 -->
+                <!-- 
+                <li class="essay-item">
+                  <h3 class="essay-title"><a href="#">[VOTRE TITRE]</a></h3>
+                  <p class="essay-excerpt">[VOTRE DESCRIPTION]</p>
+                  <div class="essay-meta">
+                    <span>[5 min read]</span>
+                    <span>•</span>
+                    <span>[Mars 2024]</span>
+                  </div>
+                  <div>
+                    <span class="tag">[Philosophie]</span>
+                    <span class="tag">[Vie]</span>
+                    <span class="tag">[Réflexion]</span>
+                  </div>
+                </li>
+                -->
                 
-                <div class="quote">
-                    <!-- COMMENTAIRE: Vous pouvez changer la citation ici -->
-                    "The most important skill for meaningful living is becoming a perpetual learner. You have to know how to learn anything you need to learn."
+                <!-- ESPACE POUR ARTICLE 2 -->
+                <div class="instruction">
+                    <h3>🎯 ARTICLE 2 : Ajoutez votre deuxième article ici</h3>
                 </div>
-            </section>
-
-            <!-- COMMENTAIRE TOUT EN HAUT POUR LA SECTION ARTICLES -->
-            <div class="comment to-fix">
-                <strong>SECTION À COMPLÉTER - ARTICLES</strong><br>
-                Tous les articles ont été supprimés comme demandé. Vous devez maintenant créer votre propre contenu.<br><br>
-                <strong>Pour ajouter des articles:</strong><br>
-                1. Copiez la structure HTML ci-dessous pour chaque nouvel article<br>
-                2. Remplissez le titre, la description, les métadonnées et les tags<br>
-                3. Répétez pour tous les articles que vous souhaitez ajouter<br><br>
                 
-                <strong>Structure d'un article:</strong><br>
-                <code>
-                    &lt;li class="essay-item"&gt;<br>
-                    &nbsp;&nbsp;&lt;h3 class="essay-title"&gt;&lt;a href="#" data-page="essays"&gt;[TITRE DE L'ARTICLE]&lt;/a&gt;&lt;/h3&gt;<br>
-                    &nbsp;&nbsp;&lt;p class="essay-excerpt"&gt;[DESCRIPTION COURTE]&lt;/p&gt;<br>
-                    &nbsp;&nbsp;&lt;div class="essay-meta"&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[TEMPS DE LECTURE]&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;•&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[DATE]&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&lt;/div&gt;<br>
-                    &nbsp;&nbsp;&lt;div&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[TAG 1]&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[TAG 2]&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[TAG 3]&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&lt;/div&gt;<br>
-                    &lt;/li&gt;
-                </code>
-            </div>
-
-            <section class="content-section">
-                <h2 class="section-title">Latest Insights</h2>
-                <ul class="essay-list">
-                    <!-- COMMENTAIRE: Exemple d'article - Copiez cette structure pour vos articles -->
-                    <div class="comment">
-                        <strong>EXEMPLE D'ARTICLE</strong><br>
-                        Voici un exemple de structure d'article. Copiez-la et modifiez le contenu pour créer vos propres articles.
-                    </div>
-                    
-                    <!-- DÉBUT DE L'EXEMPLE D'ARTICLE - À MODIFIER -->
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#" data-page="essays">[TITRE DE VOTRE ARTICLE]</a></h3>
-                        <p class="essay-excerpt">[DESCRIPTION COURTE DE VOTRE ARTICLE - environ 1-2 phrases]</p>
-                        <div class="essay-meta">
-                            <span>[TEMPS DE LECTURE, ex: 5 min read]</span>
-                            <span>•</span>
-                            <span>[DATE, ex: Mar 2024]</span>
-                        </div>
-                        <div>
-                            <span class="tag">[TAG 1]</span>
-                            <span class="tag">[TAG 2]</span>
-                            <span class="tag">[TAG 3]</span>
-                        </div>
-                    </li>
-                    <!-- FIN DE L'EXEMPLE D'ARTICLE -->
-                    
-                    <!-- COMMENTAIRE: Ajoutez vos articles ici en copiant la structure ci-dessus -->
-                    <div class="comment">
-                        <strong>ESPACE POUR AJOUTER VOS ARTICLES</strong><br>
-                        Copiez la structure de l'article ci-dessus et collez-la ici pour ajouter vos propres articles.
-                    </div>
-                </ul>
-            </section>
-        </div>
-
-        <!-- Essays Page -->
-        <div id="essays-page" class="page-content">
-            <section class="hero">
-                <h1>Essays & Writings</h1>
-                <p>Deep dives into philosophy, technology, and the art of living.</p>
-            </section>
-
-            <section class="content-section">
-                <h2 class="section-title">All Essays</h2>
-                <div class="comment to-fix">
-                    <strong>PAGE ESSAYS À COMPLÉTER</strong><br>
-                    Cette page affichera tous vos essais. Ajoutez vos articles ici en utilisant la même structure que sur la page d'accueil.
+                <!-- ESPACE POUR ARTICLE 3 -->
+                <div class="instruction">
+                    <h3>🎯 ARTICLE 3 : Ajoutez votre troisième article ici</h3>
                 </div>
-                <ul class="essay-list">
-                    <!-- COMMENTAIRE: Ajoutez vos essais ici -->
-                    <div class="comment">
-                        Ajoutez ici la liste complète de tous vos essais en utilisant la même structure que dans la section "Latest Insights".
-                    </div>
-                </ul>
-            </section>
-        </div>
-
-        <!-- Books Page -->
-        <div id="books-page" class="page-content">
-            <section class="hero">
-                <h1>Recommended Books</h1>
-                <p>Timeless wisdom from thinkers and authors who have shaped modern thought.</p>
-            </section>
-
-            <section class="content-section">
-                <h2 class="section-title">Essential Reading</h2>
-                <div class="comment to-fix">
-                    <strong>PAGE BOOKS À COMPLÉTER</strong><br>
-                    Cette page affiche vos livres recommandés. Créez votre liste de livres préférés.
+                
+                <!-- PLUS D'ESPACE POUR ARTICLES -->
+                <div class="space-for-content">
+                    <p>➕ AJOUTEZ PLUS D'ARTICLES ICI ➕</p>
+                    <p>Copiez-collez la structure pour chaque nouvel article</p>
                 </div>
-                <ul class="book-list">
-                    <!-- COMMENTAIRE: Structure pour un livre recommandé -->
-                    <div class="comment">
-                        <strong>STRUCTURE D'UN LIVRE RECOMMANDÉ:</strong><br>
-                        <code>
-                            &lt;li class="book-item"&gt;<br>
-                            &nbsp;&nbsp;&lt;h3 class="book-title"&gt;&lt;a href="#"&gt;[TITRE DU LIVRE]&lt;/a&gt;&lt;/h3&gt;<br>
-                            &nbsp;&nbsp;&lt;p class="book-author"&gt;[AUTEUR]&lt;/p&gt;<br>
-                            &nbsp;&nbsp;&lt;p class="essay-excerpt"&gt;[POURQUOI VOUS RECOMMANDEZ CE LIVRE]&lt;/p&gt;<br>
-                            &nbsp;&nbsp;&lt;div class="essay-meta"&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Book&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;•&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[ANNÉE]&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&lt;/div&gt;<br>
-                            &nbsp;&nbsp;&lt;div&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[CATÉGORIE 1]&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[CATÉGORIE 2]&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&lt;/div&gt;<br>
-                            &lt;/li&gt;
-                        </code>
-                    </div>
-                </ul>
-            </section>
-        </div>
-
-        <!-- Podcast Page -->
-        <div id="podcast-page" class="page-content">
-            <section class="hero">
-                <h1>Podcast Conversations</h1>
-                <p>Deep conversations with thinkers, creators, and philosophers.</p>
-            </section>
-
-            <section class="content-section">
-                <h2 class="section-title">Latest Episodes</h2>
-                <div class="comment to-fix">
-                    <strong>PAGE PODCAST À COMPLÉTER</strong><br>
-                    Cette page affiche vos épisodes de podcast. Ajoutez vos épisodes ou vos podcasts préférés.
-                </div>
-                <ul class="podcast-list">
-                    <!-- COMMENTAIRE: Structure pour un épisode de podcast -->
-                    <div class="comment">
-                        <strong>STRUCTURE D'UN ÉPISODE DE PODCAST:</strong><br>
-                        <code>
-                            &lt;li class="podcast-item"&gt;<br>
-                            &nbsp;&nbsp;&lt;h3 class="podcast-title"&gt;&lt;a href="#"&gt;[TITRE DE L'ÉPISODE]&lt;/a&gt;&lt;/h3&gt;<br>
-                            &nbsp;&nbsp;&lt;p class="podcast-description"&gt;[DESCRIPTION]&lt;/p&gt;<br>
-                            &nbsp;&nbsp;&lt;div class="podcast-meta"&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[DURÉE]&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;•&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[DATE]&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&lt;/div&gt;<br>
-                            &nbsp;&nbsp;&lt;div&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[SUJET 1]&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[SUJET 2]&lt;/span&gt;<br>
-                            &nbsp;&nbsp;&lt;/div&gt;<br>
-                            &lt;/li&gt;
-                        </code>
-                    </div>
-                </ul>
-            </section>
-        </div>
-
-        <!-- About Page -->
-        <div id="about-page" class="page-content">
-            <section class="hero">
-                <h1>About Dashlem</h1>
-                <p>Philosophy, wisdom, and the pursuit of understanding.</p>
-            </section>
-
-            <section class="content-section">
-                <div class="comment to-fix">
-                    <strong>PAGE ABOUT À PERSONNALISER</strong><br>
-                    Cette page présente qui vous êtes. Rédigez votre propre description.
-                </div>
-                <div class="about-content">
-                    <!-- COMMENTAIRE: Modifiez cette section pour parler de vous -->
-                    <p>[VOTRE DESCRIPTION - Qui êtes-vous? Quelles sont vos passions?]</p>
-                    
-                    <p>[VOTRE MISSION - Quel est le but de ce site? Que partagez-vous?]</p>
-                    
-                    <p>[VOTRE APPROCHE - Quelle est votre méthodologie ou votre philosophie?]</p>
-                    
-                    <p>[APPEL À L'ACTION - Que souhaitez-vous que les visiteurs fassent?]</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Archive Page -->
-        <div id="archive-page" class="page-content">
-            <section class="hero">
-                <h1>Complete Archive</h1>
-                <p>All writings, sorted by year and category.</p>
-            </section>
-
-            <section class="content-section">
-                <div class="comment to-fix">
-                    <strong>PAGE ARCHIVE À COMPLÉTER</strong><br>
-                    Cette page archive tous vos contenus par année. Organisez vos articles par date.
-                </div>
-                <h2 class="section-title">[ANNÉE, ex: 2024]</h2>
-                <ul class="essay-list">
-                    <!-- COMMENTAIRE: Ajoutez vos articles archivés ici -->
-                    <div class="comment">
-                        Ajoutez ici vos articles organisés par année. Utilisez la même structure simplifiée d'article.
-                    </div>
-                </ul>
-            </section>
-        </div>
-
-        <!-- COMMENTAIRE POUR LA NEWSLETTER -->
-        <div class="comment">
-            <strong>NEWSLETTER</strong><br>
-            Vous pouvez modifier le texte de la newsletter ci-dessous. Pour intégrer un service de newsletter réel, vous devrez utiliser un service comme Mailchimp, ConvertKit, etc. et mettre à jour l'action du formulaire.
-        </div>
-
-        <section class="newsletter">
-            <h3>Join the Wisdom Newsletter</h3>
-            <p>Subscribe to get occasional updates with new essays, insights, and philosophical reflections. No spam, ever.</p>
-            <form class="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                <button type="submit" class="newsletter-button">Subscribe</button>
-            </form>
+            </ul>
         </section>
 
-        <footer>
-            <!-- COMMENTAIRE: Modifiez le copyright ici -->
-            <p>© Dashlem 2024. All wisdom is free to share.</p>
-            <div class="footer-links">
-                <!-- COMMENTAIRE: Ajoutez vos liens sociaux réels ici -->
-                <a href="https://twitter.com/dashlem" target="_blank">Twitter</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
-                <a href="#">RSS</a>
-                <a href="#contact">Contact</a>
-                <a href="#privacy">Privacy</a>
+        <!-- SECTION ARCHIVE -->
+        <section id="archive" style="margin-top: 4rem;">
+            <h2 class="section-title">Archive</h2>
+            <div class="instruction">
+                <h3>📁 POUR L'ARCHIVE :</h3>
+                <p>Créez une section par année et listez vos articles</p>
+                <p>Exemple :</p>
+                <pre><code>&lt;h3&gt;2024&lt;/h3&gt;
+&lt;ul class="essay-list"&gt;
+  [COLLEZ VOS ARTICLES DE 2024 ICI]
+&lt;/ul&gt;
+
+&lt;h3&gt;2023&lt;/h3&gt;
+&lt;ul class="essay-list"&gt;
+  [COLLEZ VOS ARTICLES DE 2023 ICI]
+&lt;/ul&gt;</code></pre>
             </div>
+            
+            <!-- EXEMPLE D'ARCHIVE -->
+            <div class="example-box">
+                <h3>2024</h3>
+                <ul class="essay-list">
+                    <li class="essay-item">
+                        <h3 class="essay-title"><a href="#">Comment Apprendre N'importe Quel Sujet</a></h3>
+                        <div class="essay-meta">
+                            <span>Mars 2024</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- ESPACE POUR VOTRE ARCHIVE -->
+            <div class="space-for-content">
+                <h3>📂 VOTRE ARCHIVE ICI</h3>
+                <p>Organisez vos articles par année</p>
+            </div>
+        </section>
+
+        <!-- INSTRUCTIONS FINALES -->
+        <div class="instruction" style="margin-top: 4rem; background-color: #f0fff0; border-left-color: #38a169;">
+            <h3>✅ RÉCAPITULATIF :</h3>
+            <p><strong>Étape 1 :</strong> Copiez la structure d'article (dans la boîte grise en haut)</p>
+            <p><strong>Étape 2 :</strong> Collez-la dans "ESPACE POUR VOS ARTICLES"</p>
+            <p><strong>Étape 3 :</strong> Remplacez les éléments entre [ ] par votre contenu</p>
+            <p><strong>Étape 4 :</strong> Répétez pour chaque nouvel article</p>
+            <p><strong>Étape 5 :</strong> Pour l'archive, regroupez les articles par année</p>
+        </div>
+
+        <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; color: #888;">
+            <p>© 2024 Dashlem. Tous droits réservés.</p>
         </footer>
     </div>
-
-    <script>
-        // Page navigation system
-        const pages = {
-            'home': document.getElementById('home-page'),
-            'essays': document.getElementById('essays-page'),
-            'books': document.getElementById('books-page'),
-            'podcast': document.getElementById('podcast-page'),
-            'about': document.getElementById('about-page'),
-            'archive': document.getElementById('archive-page')
-        };
-
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        // Function to switch pages
-        function switchPage(pageId) {
-            // Hide all pages
-            Object.values(pages).forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            if (pages[pageId]) {
-                pages[pageId].classList.add('active');
-            }
-            
-            // Update active nav link
-            navLinks.forEach(link => {
-                if (link.dataset.page === pageId) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-            // Update browser history
-            history.pushState({ page: pageId }, '', `#${pageId}`);
-        }
-
-        // Add click events to nav links
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.dataset.page;
-                switchPage(pageId);
-            });
-        });
-
-        // Handle browser back/forward buttons
-        window.addEventListener('popstate', function(e) {
-            if (e.state && e.state.page) {
-                switchPage(e.state.page);
-            } else {
-                switchPage('home');
-            }
-        });
-
-        // Handle hash on page load
-        window.addEventListener('DOMContentLoaded', function() {
-            const hash = window.location.hash.replace('#', '');
-            if (hash && pages[hash]) {
-                switchPage(hash);
-            } else {
-                switchPage('home');
-            }
-        });
-
-        // Newsletter form handler
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('.newsletter-input').value;
-            alert(`Thank you for subscribing to Dashlem's wisdom! You've subscribed with: ${email}`);
-            this.reset();
-        });
-
-        // Make essay titles clickable to navigate to essays page
-        document.querySelectorAll('.essay-title a, .book-title a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.dataset.page) {
-                    e.preventDefault();
-                    switchPage(this.dataset.page);
-                }
-            });
-        });
-        
-        // COMMENTAIRE DANS LA CONSOLE POUR GUIDER L'UTILISATEUR
-        console.log("💡 GUIDE DE CRÉATION DE CONTENU:");
-        console.log("1. Tous les articles ont été supprimés comme demandé");
-        console.log("2. Des commentaires visibles ont été ajoutés pour vous guider");
-        console.log("3. Suivez les instructions dans les boîtes de commentaires rouges et jaunes");
-        console.log("4. Copiez les structures d'articles fournies pour créer votre contenu");
-    </script>
 </body>
 </html>

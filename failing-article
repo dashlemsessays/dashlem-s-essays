@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why do some people give up and others don’t? - dashlem</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f0;
+            color: #2d2d2d;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            background-color: #f5f5f0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #2d2d2d;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #2d2d2d;
+        }
+
+        .article-page {
+            max-width: 800px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .article-meta {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .article-page h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .article-page p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            background-color: #fff;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .article-page {
+                margin: 4rem 1rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">dashlem</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#articles">Articles</a></li>
+            <li><a href="index.html#newsletter">Newsletter</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Article Content -->
+    <section class="article-page">
+        <div class="article-meta">DECEMBER 2024 · 3 MIN READ</div>
+        <h1>Why do some people give up and others don’t?</h1>
+        <p>Every entrepreneur has failed. Even I have, even though I am very young (16) and barely an entrepreneur. I’ve struggled with over seven businesses that I gave up on. But why did I?</p>
+        <p>And how am I now sure that I'll never give up anymore? The answer lies in mindset, perseverance, and learning from failure. People who don’t give up often have a strong sense of purpose, a growth mindset, and the habit of taking consistent action even when results aren’t immediate.</p>
+        <p>Another factor is how you perceive failure. Successful people treat failure as feedback, not as a dead end. They analyze what went wrong, make adjustments, and try again. Meanwhile, others may feel discouraged and stop entirely.</p>
+        <p>Building resilience is also key. It’s not about being fearless; it’s about feeling fear or doubt and choosing to move forward anyway. Over time, this builds confidence, competence, and an unshakable determination.</p>
+        <p>In conclusion, giving up is a choice, but persistence is a habit that can be cultivated. By focusing on growth, learning from mistakes, and maintaining a clear purpose, anyone can develop the mindset to keep going when others quit.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>© 2025 dashlem. All rights reserved</div>
+        <a href="https://x.com/thedashlem" class="social-link">@thedashlem</a>
+    </footer>
+
+</body>
+</html>
